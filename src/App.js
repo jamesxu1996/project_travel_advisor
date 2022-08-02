@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CssBaseline, Grid } from '@material-ui/core';
+import { spacing } from '@mui/system';
 
 import { getPlacesData, getWeatherData } from './api/travelAdvisorAPI';
 import Header from './components/Header/Header';
@@ -22,9 +23,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
-      setCoords({ lat: latitude, lng: longitude });
-    });
+    setCoords({ lat: 37.774929, lng: -122.419416 });
   }, []);
 
   useEffect(() => {
